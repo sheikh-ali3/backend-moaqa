@@ -111,6 +111,10 @@ app.use(express.json());
 // Serve static files from the uploads directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+app.get("/", (req, res) => {
+  res.send("🎉 Backend Server is Running Successfully!");
+});
+
 // Use the product routes
 app.use('/api', productRoutes);
 
