@@ -99,7 +99,7 @@ websocketService.initialize(server);
 
 // Enable CORS with more permissive settings for development
 app.use(cors({
-  origin: '*', // Allow all origins during development
+  origin: 'https://frontend-moaqa.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true

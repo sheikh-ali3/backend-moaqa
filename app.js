@@ -7,7 +7,7 @@ const serviceRouter = require('./routes/serviceRoutes');
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3001', 'https://your-frontend-domain.com'],
+  origin: 'https://frontend-moaqa.vercel.app',
   credentials: true
 }));
 
