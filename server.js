@@ -692,9 +692,11 @@ app.post('/superadmin/login', async (req, res) => {
     try {
       const token = jwt.sign(
         { 
-          id: user._id, 
-          email: user.email, 
-          role: user.role,
+          user: {
+            id: user._id, 
+            email: user.email, 
+            role: user.role,
+          }
           //exp: Math.floor(Date.now() / 1000) + (7 * 24 * 60 * 60) // 7 days
         },
         process.env.JWT_SECRET,
