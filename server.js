@@ -695,9 +695,10 @@ app.post('/superadmin/login', async (req, res) => {
           id: user._id, 
           email: user.email, 
           role: user.role,
-          exp: Math.floor(Date.now() / 1000) + (7 * 24 * 60 * 60) // 7 days
+          //exp: Math.floor(Date.now() / 1000) + (7 * 24 * 60 * 60) // 7 days
         },
-        process.env.JWT_SECRET
+        process.env.JWT_SECRET,
+        { expiresIn: '7d' }
       );
 
       console.log('Superadmin login successful:', { email, userId: user._id });
