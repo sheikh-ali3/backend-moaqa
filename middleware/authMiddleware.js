@@ -25,10 +25,10 @@ const authenticateToken = async (req, res, next) => {
     }
     
     // Add user info to request
-    req.user = decoded;
+    req.user = decoded.user;
     
     // If using real DB, verify the user exists
-    const user = await User.findById(decoded.id);
+    const user = await User.findById(req.user.id);
     if (!user) {
       if (process.env.NODE_ENV === 'development') {
         console.log('User not found in database:', decoded.id);
